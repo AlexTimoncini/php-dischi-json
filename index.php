@@ -20,15 +20,26 @@
                 <div class="container">
                     <div class="row">
                         <div class="cards col-12 d-flex flex-wrap justify-content-center">
-                            <div class="card m-4" v-for="album in albums">
-                                <img :src="album.poster" class="card-img-top" :alt="album.title">
+                            <div class="card m-4" v-for="(album, index) in albums" :key="index">
+                                <img :src="album.poster" class="card-img-top" :alt="album.title" @click="displayInfo(index)" draggable="false">
                                 <div class="card-body text-center">
                                     <p class="card-text">{{ album.title }}</p>
                                     <p class="card-text">{{ album.author }}</p>
                                     <p class="card-text">{{ album.year }}</p>
                                 </div>
-                                </div>
                             </div>
+                            <div class="ivy_pop d-flex" v-if="displayedAlbum">
+                                <div class="card m-auto">
+                                    <img :src="albumTriggered.poster" class="mb-4" :alt="albumTriggered.title" draggable="false" @click="displayedAlbum = !displayedAlbum">
+                                    <div class="text-center">
+                                        <p class="fs-2">{{ albumTriggered.title }}</p>
+                                        <p class="fs-3">{{ albumTriggered.author }}</p>
+                                        <p class="fs-4">{{ albumTriggered.year }}</p>
+                                    </div>
+                                </div>
+                                <button class="ivy_close_btn" @click="displayedAlbum = !displayedAlbum">X</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>

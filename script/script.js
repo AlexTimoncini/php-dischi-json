@@ -5,6 +5,8 @@ createApp({
         return {
             serverUrl : './server.php',
             albums : [],
+            displayedAlbum : false,
+            albumTriggered : '',
         }
     },
 
@@ -20,6 +22,10 @@ createApp({
             .catch(function (error) {
                 console.log(error);
             })
+        },
+        displayInfo(elIndex){
+            this.displayedAlbum = true;
+            this.albumTriggered = this.albums[elIndex];
         }
     },
 
