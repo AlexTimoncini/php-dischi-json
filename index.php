@@ -11,7 +11,27 @@
     </head>
     <body>
         <div id="app">
-
+            <header>
+                <nav>
+                    <h1>BOOLTIFY</h1>
+                </nav>
+            </header>
+            <main>
+                <div class="container">
+                    <div class="row">
+                        <div class="cards col-12 d-flex flex-wrap justify-content-center">
+                            <div class="card m-4" v-for="album in albums">
+                                <img :src="album.poster" class="card-img-top" :alt="album.title">
+                                <div class="card-body text-center">
+                                    <p class="card-text">{{ album.title }}</p>
+                                    <p class="card-text">{{ album.author }}</p>
+                                    <p class="card-text">{{ album.year }}</p>
+                                </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </main>
         </div>
 
         <script src="./script/script.js"></script>

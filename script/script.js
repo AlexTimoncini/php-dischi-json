@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             serverUrl : './server.php',
+            albums : [],
         }
     },
 
@@ -13,7 +14,8 @@ createApp({
                 params: {}
             })
             .then((response)=> {
-                console.log(response.data);
+                this.albums = response.data;
+                console.log(this.albums);
             })
             .catch(function (error) {
                 console.log(error);

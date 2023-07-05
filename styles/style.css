@@ -5,3 +5,29 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+
+body{
+    height: 100vh;
+    background-color: rgb(103, 103, 224);
+    color: #fff;
+}
+
+nav {
+    padding: 1rem 3rem;
+}
+
+main {
+    color :#000;
+}
+
+.card{
+    width: 320px;
+    background-color: rgb(84, 84, 248);
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.card img{
+    width: 100%;
+    display: block;
+}
